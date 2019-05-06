@@ -247,7 +247,9 @@
     self.containerView.frame = CGRectMake(0, -[self totalHeight], rect.size.width, [self totalHeight]);
 
     //menu frame
-    self.menuView.frame = CGRectMake(0, 40 + [self navigationBarOffset], rect.size.width, self.containerView.bounds.size.height-40);
+    //self.menuView.frame = CGRectMake(0, 40 + [self navigationBarOffset], rect.size.width, self.containerView.bounds.size.height-40);
+    self.menuView.frame = CGRectMake(0, 40 + [self navigationBarOffset], rect.size.width, self.containerView.bounds.size.height - 40 - [self navigationBarOffset] + 250);
+    self.menuView.backgroundColor = [UIColor whiteColor]; //This is for background color
     
     
     if (self.toolbar && self.liveBlur) {
