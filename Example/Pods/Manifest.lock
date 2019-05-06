@@ -1,0 +1,16 @@
+PODS:
+  - FCVerticalMenu (0.1.2)
+
+DEPENDENCIES:
+  - FCVerticalMenu (from `../`)
+
+EXTERNAL SOURCES:
+  FCVerticalMenu:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  FCVerticalMenu: 65f45715751561d50a75cc31203a5b9ab1c38afb
+
+PODFILE CHECKSUM: 9b5c9e20bf2b4b7e64b464f4b482c0c0b38158c3
+
+COCOAPODS: 1.5.3

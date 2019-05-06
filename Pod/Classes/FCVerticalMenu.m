@@ -10,6 +10,8 @@
 #import "FCVerticalMenuItem.h"
 #import "FCVerticalMenuItemCollectionViewCell.h"
 
+#define IS_IPHONE5 ([[UIScreen mainScreen] bounds].size.width == 568 || [[UIScreen mainScreen] bounds].size.height == 568)
+
 @interface FCVerticalMenu ()
     @property (assign, readwrite, nonatomic) BOOL isOpen;
     @property (assign, readwrite, nonatomic) BOOL isAnimating;
@@ -311,7 +313,31 @@
 
 - (CGFloat)navigationBarOffset
 {
-    return self.appearsBehindNavigationBar? 64.0f : 0.0f;
+    if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        if (@available(iOS 8.0, *)) {
+            switch ((int)[[UIScreen mainScreen] nativeBounds].size.height) {
+                    case 2436:
+                    return self.appearsBehindNavigationBar? 88.0f : 0.0f;
+                    break;
+                    
+                    case 2688:
+                    return self.appearsBehindNavigationBar? 88.0f : 0.0f;
+                    break;
+                    
+                    case 1792:
+                    return self.appearsBehindNavigationBar? 88.0f : 0.0f;
+                    break;
+                    
+                default:
+                    return self.appearsBehindNavigationBar? 64.0f : 0.0f;
+                    break;
+            }
+        } else {
+            return self.appearsBehindNavigationBar? 64.0f : 0.0f;
+        }
+    } else {
+        return self.appearsBehindNavigationBar? 64.0f : 0.0f;
+    }
 }
 
 

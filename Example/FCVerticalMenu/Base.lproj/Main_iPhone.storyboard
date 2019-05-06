@@ -1,8 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="zBg-lW-X2f">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="zBg-lW-X2f">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Navigation View Controller-->
@@ -10,7 +14,7 @@
             <objects>
                 <navigationController id="zBg-lW-X2f" customClass="FCNavigationViewController" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="L2o-Bz-4He">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="78S-UF-6uS">
@@ -22,7 +26,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AaT-yy-O3V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="116" y="-784"/>
+            <point key="canvasLocation" x="168.11594202898553" y="-525"/>
         </scene>
         <!--First View Controller-->
         <scene sceneID="SL8-DR-GRN">
@@ -33,21 +37,21 @@
                         <viewControllerLayoutGuide type="bottom" id="b3X-4J-rH0"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="lt5-0P-yif">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b00-ql-ejT">
-                                <rect key="frame" x="106" y="252" width="108" height="73"/>
+                                <rect key="frame" x="153" y="416" width="108" height="73"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="73" id="7ES-8P-vFQ"/>
                                     <constraint firstAttribute="width" constant="108" id="V2k-MH-spw"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="90"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.4941176471" green="0.82745098039999998" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.43244734406471252" green="0.80846583843231201" blue="0.10234752297401428" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="b00-ql-ejT" secondAttribute="centerX" id="gfI-Jo-lqX"/>
                             <constraint firstAttribute="centerY" secondItem="b00-ql-ejT" secondAttribute="centerY" constant="-4.5" id="hDN-bn-w6b"/>
@@ -57,7 +61,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kCt-sn-0ab" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="598" y="-784"/>
+            <point key="canvasLocation" x="866.66666666666674" y="-525"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="VtH-fp-stW">
@@ -68,21 +72,21 @@
                         <viewControllerLayoutGuide type="bottom" id="xXe-1w-ysX"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="qZK-Xa-aFU">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AAp-pR-NSm">
-                                <rect key="frame" x="106" y="230" width="108" height="108"/>
+                                <rect key="frame" x="153" y="394" width="108" height="108"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="108" id="cds-f9-GSD"/>
                                     <constraint firstAttribute="height" constant="108" id="he8-QX-39m"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="90"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.17254901959999999" green="0.59999999999999998" blue="0.82352941180000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.1474071741104126" green="0.52473342418670654" blue="0.78238427639007568" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="AAp-pR-NSm" secondAttribute="centerY" id="Edh-jK-n5S"/>
                             <constraint firstAttribute="centerX" secondItem="AAp-pR-NSm" secondAttribute="centerX" id="MEB-8D-EUY"/>
@@ -92,7 +96,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KgU-fP-jIb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1014" y="-784"/>
+            <point key="canvasLocation" x="1584" y="-516"/>
         </scene>
         <!--Third View Controller-->
         <scene sceneID="jGf-AH-3gS">
@@ -103,28 +107,24 @@
                         <viewControllerLayoutGuide type="bottom" id="Wl8-7u-9Gj"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="bZu-Tl-6Uy">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="background.png" translatesAutoresizingMaskIntoConstraints="NO" id="o1J-hv-EPo">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.17254901959999999" green="0.59999999999999998" blue="0.82352941180000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.1474071741104126" green="0.52473342418670654" blue="0.78238427639007568" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="Yk8-nn-QMb"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B21-My-J9l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1410" y="-784"/>
+            <point key="canvasLocation" x="2223" y="-516"/>
         </scene>
     </scenes>
     <resources>
         <image name="background.png" width="320" height="568"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
 </document>
