@@ -18,6 +18,7 @@
     @property (strong, readwrite, nonatomic) UIView *containerView;
     @property (strong, readwrite, nonatomic) UIView *menuView;
     @property (strong, readwrite, nonatomic) UIToolbar *toolbar;
+    @property (strong,nonatomic) UIRefreshControl * refresher;
 
 - (CGFloat)navigationBarOffset;
 @end
@@ -30,30 +31,42 @@
     self = [super init];
     if (self) {
         
-//        Setting default appeareance and settings
-//
+        //        Setting default appeareance and settings
+        //
         _closeOnSelection = YES;
         
-        _font = [UIFont fontWithName:@"Helvetica-Light" size:14];
-        _textColor = [UIColor whiteColor];
+        if ([UIScreen mainScreen].bounds.size.width == 320)
+        {
+            _font = [UIFont fontWithName:@"Montserrat-Light" size:16];
+        }
+        else if ([UIScreen mainScreen].bounds.size.width == 375)
+        {
+            _font = [UIFont fontWithName:@"Montserrat-Light" size:17];
+        }
+        else
+        {
+            _font = [UIFont fontWithName:@"Montserrat-Light" size:18];
+        }
+        
+        _textColor = [UIColor colorWithRed:17/255.0 green:17/255.0 blue:17/255.0 alpha:1]; //[UIColor blackColor];
         _textShadowColor = [UIColor blackColor];
         _textAlignment = NSTextAlignmentCenter;
-
-        _imageTintColor = [UIColor whiteColor];
+        
+        _imageTintColor = [UIColor clearColor];
         _highlightedImageTintColor = _imageTintColor;
         
         _highlightedBackgroundColor = [UIColor colorWithRed:155.0/255.0 green:155.0/255.0 blue:155.0/255.0 alpha:1.0];
         _highlightedTextColor = [UIColor colorWithRed:128/255.0 green:126/255.0 blue:124/255.0 alpha:1.0];
         _highlightedTextShadowColor = [UIColor blackColor];
-
+        
         _borderWidth = 0.5;
         _borderColor = [UIColor whiteColor];
         
         _backgroundAlpha = 0.95;
-        _backgroundColor = [UIColor colorWithRed:53/255.0 green:53/255.0 blue:52/255.0 alpha:1.0];
+        _backgroundColor = [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1.0];
         _liveBlurTintColor = nil;
         _liveBlur = YES;
-
+        
         _animationDuration = 0.3;
         _closeAnimationDuration = 0.2;
         _bounce = YES;
@@ -63,27 +76,47 @@
         _menuLayout = [[UICollectionViewFlowLayout alloc] init];
         // setting cell attributes globally via layout properties ///////////////
         
-        _menuLayout.itemSize = CGSizeMake(80, 100);
-        _menuLayout.minimumInteritemSpacing = 15;
-        _menuLayout.minimumLineSpacing = 15;
+        
+        
+        _menuLayout.itemSize = CGSizeMake([UIScreen mainScreen].bounds.size.width /2 , ([UIScreen mainScreen].bounds.size.height - 64 ) / 4);
+        //     NSLog(@"%f",[UIScreen mainScreen].bounds.size.height);
+        _menuLayout.minimumInteritemSpacing = 0;
+        _menuLayout.minimumLineSpacing = 0;
         _menuLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
-        _menuLayout.sectionInset = UIEdgeInsetsMake(25, 25, 25, 25);
-
+        _menuLayout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
+        
         _menuCollection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:_menuLayout];
         [_menuCollection registerClass:[FCVerticalMenuItemCollectionViewCell class] forCellWithReuseIdentifier:@"menuItem"];
-        _menuCollection.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-        
-
         _menuCollection.backgroundColor = [UIColor clearColor];
         _menuCollection.delegate = self;
         _menuCollection.dataSource = self;
         
+        self.refresher = [[UIRefreshControl alloc]init];
+        self.menuCollection.alwaysBounceVertical = true;
+        self.refresher.tintColor = [UIColor clearColor];
+        [self.refresher addTarget:self action:@selector(loadData) forControlEvents: UIControlEventValueChanged];
+        [_menuCollection addSubview:self.refresher];
+        
+        /* refresher = UIRefreshControl()
+         self.collectionHome!.alwaysBounceVertical = true
+         self.refresher.tintColor = UIColor.clear
+         self.refresher.addTarget(self, action: #selector(loadData), for: .valueChanged)
+         self.collectionHome!.addSubview(refresher)*/
         
     }
     return self;
 }
 
+-(void)loadData
+{
+    self.stopRefresher;
+}
 
+-(void)stopRefresher
+{
+    self.refresher.tintColor = [UIColor clearColor];
+    [self.refresher endRefreshing];
+}
 
 /**
  *  Init the menu with an array of FCVerticalMenuItem
